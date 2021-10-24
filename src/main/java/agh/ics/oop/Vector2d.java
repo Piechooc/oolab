@@ -12,31 +12,23 @@ public class Vector2d {
     }
 
     public String toString() {
-        return "(" + x + " " + y + ")";
+        return "(" + x + "," + y + ")";
     }
 
     public boolean precedes(Vector2d other) {
-        return this.x >= other.x && this.y >= other.y;
-    }
-
-    public boolean follows(Vector2d other) {
         return this.x <= other.x && this.y <= other.y;
     }
 
+    public boolean follows(Vector2d other) {
+        return this.x >= other.x && this.y >= other.y;
+    }
+
     public Vector2d upperRight(Vector2d other) {
-        if (this.x >= other.x && this.y >= other.y) {
-            return this;
-        } else {
-            return other;
-        }
+        return new Vector2d(Math.max(this.x, other.x), Math.max(this.y, other.y));
     }
 
     public Vector2d lowerLeft(Vector2d other) {
-        if (this.x >= other.x && this.y >= other.y) {
-            return other;
-        } else {
-            return this;
-        }
+        return new Vector2d(Math.min(this.x, other.x), Math.min(this.y, other.y));
     }
 
     public Vector2d add(Vector2d other) {

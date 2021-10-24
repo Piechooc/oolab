@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Vector2dTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2021-10-24T13:49:42" hostname="DESKTOP-ARRLIK4" time="0.034">
+  <properties/>
+  <testcase name="testAdd()" classname="Vector2dTest" time="0.018"/>
+  <testcase name="testSubtract()" classname="Vector2dTest" time="0.0"/>
+  <testcase name="testFollows()" classname="Vector2dTest" time="0.001"/>
+  <testcase name="testToString()" classname="Vector2dTest" time="0.005"/>
+  <testcase name="testPrecedes()" classname="Vector2dTest" time="0.0"/>
+  <testcase name="testLowerLeft()" classname="Vector2dTest" time="0.001"/>
+  <testcase name="testOpposite()" classname="Vector2dTest" time="0.001"/>
+  <testcase name="testEquals()" classname="Vector2dTest" time="0.001"/>
+  <testcase name="testUpperRight()" classname="Vector2dTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
