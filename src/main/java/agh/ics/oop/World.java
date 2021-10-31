@@ -6,45 +6,27 @@ import static agh.ics.oop.Direction.*;
 
 public class World {
     public static void main(String[] args) {
-//        System.out.println("Start");
-//        ArrayList<Direction> newArgs = convert(args);
-//        run(newArgs);
-//        System.out.println("Stop");
 
-        Vector2d position1 = new Vector2d(1,2);
-        System.out.println(position1);
-        Vector2d position2 = new Vector2d(-2,1);
-        System.out.println(position2);
-        System.out.println(position1.add(position2));
+        Animal Doge = new Animal();
+        System.out.println(Doge);
 
-        System.out.println(MapDirection.NORTH);
-        System.out.println(MapDirection.NORTH.next());
-        System.out.println(MapDirection.NORTH.previous());
-        System.out.println(MapDirection.NORTH.toUnitVector());
+//        Doge.move(MoveDirection.RIGHT);
+//        Doge.move(MoveDirection.FORWARD);
+//        Doge.move(MoveDirection.FORWARD);
+//        Doge.move(MoveDirection.FORWARD);
+//        System.out.println(Doge);
+
+        runAnimal(args, Doge);
+    }
+
+    public static void runAnimal(String[] args, Animal animal) {
+        for (MoveDirection direction : OptionsParser.parse(args)) {
+            animal.move(direction);
+            System.out.println(direction + " -> " + animal.toString());
+        }
     }
 
     public static void run(ArrayList<Direction> arg) {
-//        System.out.println("Animal goes forward");
-//        for (int i = 0; i < arg.length; i++) {
-//            if (i != arg.length - 1) {
-//                System.out.print(arg[i]);
-//                System.out.print(", ");
-//            } else {
-//                System.out.println(arg[i]);
-//            }
-//        }
-
-//        for(String el : arg) {
-//            String res = switch(el) {
-//                case "f" -> "Zwierzak idzie do przodu";
-//                case "b" -> "Zwierzak idzie do tyłu";
-//                case "r" -> "Zwierzak skręca w prawo";
-//                case "l" -> "Zwierzak skręca w lewo";
-//                default -> "-1";
-//            };
-//
-//            System.out.println(res);
-//        }
 
         for (Direction el : arg) {
             String res = switch (el) {
