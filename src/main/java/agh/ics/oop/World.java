@@ -1,22 +1,18 @@
 package agh.ics.oop;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import static agh.ics.oop.Direction.*;
 
 public class World {
     public static void main(String[] args) {
-
-        Animal Doge = new Animal();
-        System.out.println(Doge);
-
-//        Doge.move(MoveDirection.RIGHT);
-//        Doge.move(MoveDirection.FORWARD);
-//        Doge.move(MoveDirection.FORWARD);
-//        Doge.move(MoveDirection.FORWARD);
-//        System.out.println(Doge);
-
-        runAnimal(args, Doge);
+        List<MoveDirection> directions = OptionsParser.parse(args);
+        IWorldMap map = new RectangularMap(10, 5);
+        List<Vector2d> positions = new ArrayList<>(Arrays.asList(new Vector2d(2, 2), new Vector2d(3, 4)));
+        IEngine engine = new SimulationEngine(directions, map, positions);
+        engine.run();
     }
 
     public static void runAnimal(String[] args, Animal animal) {
