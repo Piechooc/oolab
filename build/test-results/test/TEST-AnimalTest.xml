@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="AnimalTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-14T17:02:23" hostname="DESKTOP-ARRLIK4" time="0.031">
+  <properties/>
+  <testcase name="testMove()" classname="AnimalTest" time="0.031"/>
+  <system-out><![CDATA[FORWARD -> ^
+FORWARD -> ^
+FORWARD -> ^
+FORWARD -> ^
+BACKWARD -> ^
+BACKWARD -> ^
+BACKWARD -> ^
+BACKWARD -> ^
+RIGHT -> >
+FORWARD -> >
+FORWARD -> >
+FORWARD -> >
+FORWARD -> >
+LEFT -> <
+FORWARD -> <
+FORWARD -> <
+FORWARD -> <
+FORWARD -> <
+FORWARD -> ^
+RIGHT -> >
+FORWARD -> >
+RIGHT -> v
+FORWARD -> v
+FORWARD -> v
+FORWARD -> v
+FORWARD -> v
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
