@@ -1,10 +1,7 @@
 package agh.ics.oop;
 
-import java.util.Objects;
-
-public class Animal {
+public class Animal extends AbstractWorldMapElement implements IMapElement{
     private MapDirection orientation = MapDirection.NORTH;
-    private Vector2d position;
     private final IWorldMap map;
 
     public Animal(IWorldMap map) {
@@ -48,9 +45,4 @@ public class Animal {
             }
         }
     }
-
-    public Vector2d getPosition() {
-        return this.position;
-    }
-
 }

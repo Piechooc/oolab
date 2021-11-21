@@ -1,26 +1,0 @@
-FORWARD -> ^
-FORWARD -> ^
-FORWARD -> ^
-FORWARD -> ^
-BACKWARD -> ^
-BACKWARD -> ^
-BACKWARD -> ^
-BACKWARD -> ^
-RIGHT -> >
-FORWARD -> >
-FORWARD -> >
-FORWARD -> >
-FORWARD -> >
-LEFT -> <
-FORWARD -> <
-FORWARD -> <
-FORWARD -> <
-FORWARD -> <
-FORWARD -> ^
-RIGHT -> >
-FORWARD -> >
-RIGHT -> v
-FORWARD -> v
-FORWARD -> v
-FORWARD -> v
-FORWARD -> v
