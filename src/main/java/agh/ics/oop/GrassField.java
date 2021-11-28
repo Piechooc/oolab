@@ -1,5 +1,7 @@
 package agh.ics.oop;
 
+import java.util.Set;
+
 public class GrassField extends AbstractWorldMap implements IWorldMap {
 
     public GrassField(int grassTuftsNumber) {
@@ -11,7 +13,7 @@ public class GrassField extends AbstractWorldMap implements IWorldMap {
                     (int) (Math.random() * range));
             Object temp = objectAt(potentialPosition);
             if (temp == null) {
-                elements.add(new Grass(potentialPosition));
+                elements.put(potentialPosition, new Grass(potentialPosition));
                 counter++;
             }
         }
@@ -19,9 +21,10 @@ public class GrassField extends AbstractWorldMap implements IWorldMap {
 
     @Override
     public String toString() {
-        for (AbstractWorldMapElement element : elements) {
-            this.upperRight = this.upperRight.upperRight(element.getPosition());
-            this.lowerLeft = this.lowerLeft.lowerLeft(element.getPosition());
+        Set<Vector2d> keySet = elements.keySet();
+        for (Vector2d position : keySet) {
+            this.upperRight = this.upperRight.upperRight(position);
+            this.lowerLeft = this.lowerLeft.lowerLeft(position);
         }
         return super.toString();
     }
