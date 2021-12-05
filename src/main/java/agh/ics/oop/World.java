@@ -8,12 +8,16 @@ import static agh.ics.oop.Direction.*;
 
 public class World {
     public static void main(String[] args) {
-        List<MoveDirection> directions = OptionsParser.parse(args);
-//        IWorldMap map = new RectangularMap(10, 5);
-        AbstractWorldMap map = new GrassField(10);
-        List<Vector2d> positions = new ArrayList<>(Arrays.asList(new Vector2d(2, 2), new Vector2d(3, 4)));
-        IEngine engine = new SimulationEngine(directions, map, positions);
-        engine.run();
+        try {
+            List<MoveDirection> directions = OptionsParser.parse(args);
+            AbstractWorldMap map = new GrassField(10);
+            List<Vector2d> positions = new ArrayList<>(Arrays.asList(new Vector2d(2, 2), new Vector2d(3, 4)));
+            IEngine engine = new SimulationEngine(directions, map, positions);
+            engine.run();
+        } catch (IllegalArgumentException exception) {
+            System.out.println(exception.getMessage());
+            System.exit(-1);
+        }
     }
 
     public static void runAnimal(String[] args, Animal animal) {

@@ -28,22 +28,22 @@ class RectangularMapTest {
     @Test
     void testPlace() {
         RectangularMap testMap = new RectangularMap(8,8);
-        assertFalse(testMap.place(new Animal(testMap, new Vector2d(-1, -3))));
-        assertFalse(testMap.place(new Animal(testMap, new Vector2d(-4, 4))));
-        assertFalse(testMap.place(new Animal(testMap, new Vector2d(-1, 8))));
-        assertFalse(testMap.place(new Animal(testMap, new Vector2d(5, 9))));
-        assertFalse(testMap.place(new Animal(testMap, new Vector2d(10, 11))));
-        assertFalse(testMap.place(new Animal(testMap, new Vector2d(8, 5))));
-        assertFalse(testMap.place(new Animal(testMap, new Vector2d(9, -2))));
-        assertFalse(testMap.place(new Animal(testMap, new Vector2d(4, -3))));
+        assertThrows(IllegalArgumentException.class, () -> testMap.place(new Animal(testMap, new Vector2d(-1, -3))));
+        assertThrows(IllegalArgumentException.class, () -> testMap.place(new Animal(testMap, new Vector2d(-4, 4))));
+        assertThrows(IllegalArgumentException.class, () -> testMap.place(new Animal(testMap, new Vector2d(-1, 8))));
+        assertThrows(IllegalArgumentException.class, () -> testMap.place(new Animal(testMap, new Vector2d(5, 9))));
+        assertThrows(IllegalArgumentException.class, () -> testMap.place(new Animal(testMap, new Vector2d(10, 11))));
+        assertThrows(IllegalArgumentException.class, () -> testMap.place(new Animal(testMap, new Vector2d(8, 5))));
+        assertThrows(IllegalArgumentException.class, () -> testMap.place(new Animal(testMap, new Vector2d(9, -2))));
+        assertThrows(IllegalArgumentException.class, () -> testMap.place(new Animal(testMap, new Vector2d(4, -3))));
         assertTrue(testMap.place(new Animal(testMap, new Vector2d(3, 4))));
         assertTrue(testMap.place(new Animal(testMap, new Vector2d(0, 0))));
         assertTrue(testMap.place(new Animal(testMap, new Vector2d(0, 7))));
         assertTrue(testMap.place(new Animal(testMap, new Vector2d(7, 0))));
         assertTrue(testMap.place(new Animal(testMap, new Vector2d(7, 7))));
         assertTrue(testMap.place(new Animal(testMap)));
-        assertFalse(testMap.place(new Animal(testMap)));
-        assertFalse(testMap.place(new Animal(testMap, new Vector2d(3, 4))));
+        assertThrows(IllegalArgumentException.class, () -> testMap.place(new Animal(testMap)));
+        assertThrows(IllegalArgumentException.class, () -> testMap.place(new Animal(testMap, new Vector2d(3, 4))));
     }
 
     @Test

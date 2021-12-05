@@ -15,12 +15,12 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
     }
 
     @Override
-    public boolean place(Animal animal) {
+    public boolean place(Animal animal) throws IllegalArgumentException {
         if (canMoveTo(animal.getPosition())) {
             this.elements.put(animal.getPosition(), animal);
             return true;
         }else {
-            return false;
+            throw new IllegalArgumentException("It is impossible to place anything on " + animal.getPosition());
         }
     }
 
