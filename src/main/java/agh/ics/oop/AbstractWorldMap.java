@@ -46,4 +46,12 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
         this.elements.remove(oldPosition);
         this.elements.put(newPosition, element);
     }
+
+    public Vector2d getLowerLeft() {
+        return lowerLeft;
+    }
+
+    public Vector2d getUpperRight() {
+        return upperRight;
+    }
 }

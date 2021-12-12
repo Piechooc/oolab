@@ -61,4 +61,9 @@ public class GrassField extends AbstractWorldMap implements IWorldMap {
             this.mapBoundary.positionChanged(oldPosition, newPosition);
         }
     }
+
+    public void currentCorners() {
+        this.upperRight = this.mapBoundary.getUpperRight();
+        this.lowerLeft = this.mapBoundary.getLowerLeft();
+    }
 }
