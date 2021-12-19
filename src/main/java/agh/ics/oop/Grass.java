@@ -9,4 +9,14 @@ public class Grass extends AbstractWorldMapElement implements IMapElement{
     public String toString() {
         return "*";
     }
+
+    @Override
+    public String getImage() {
+        return "src/main/resources/Grass.png";
+    }
+
+    @Override
+    public String getLabel() {
+        return "Grass";
+    }
 }

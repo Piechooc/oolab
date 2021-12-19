@@ -31,7 +31,7 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
     }
 
     @Override
-    public Object objectAt(Vector2d position) {
+    public AbstractWorldMapElement objectAt(Vector2d position) {
         return elements.get(position);
     }
 

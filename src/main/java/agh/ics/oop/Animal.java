@@ -35,8 +35,12 @@ public class Animal extends AbstractWorldMapElement implements IMapElement{
 
     public void move(MoveDirection direction) {
         switch (direction) {
-            case RIGHT -> this.orientation = this.orientation.next();
-            case LEFT -> this.orientation = this.orientation.previous();
+            case RIGHT -> {
+                this.orientation = this.orientation.next();
+            }
+            case LEFT -> {
+                this.orientation = this.orientation.previous();
+            }
             case FORWARD -> {
                 if (map.canMoveTo(this.position.add(this.orientation.toUnitVector()))) {
                     positionChanged(this.position, this.position.add(this.orientation.toUnitVector()));
@@ -63,5 +67,20 @@ public class Animal extends AbstractWorldMapElement implements IMapElement{
     private void positionChanged(Vector2d oldPosition, Vector2d newPosition) {
         for (IPositionChangeObserver observer : this.observersList)
             observer.positionChanged(oldPosition, newPosition);
+    }
+
+    @Override
+    public String getImage() {
+        return switch (this.orientation) {
+            case NORTH -> "src/main/resources/Up.png";
+            case EAST -> "src/main/resources/Right.png";
+            case SOUTH -> "src/main/resources/Down.png";
+            case WEST -> "src/main/resources/Left.png";
+        };
+    }
+
+    @Override
+    public String getLabel() {
+        return this.position.toString();
     }
 }
